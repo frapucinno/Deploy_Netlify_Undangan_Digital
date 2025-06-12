@@ -64,6 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("nama-penerima-hadiah").innerText = `Nama Penerima: ${data.nama_penerima_hadiah}`;
       document.getElementById("no-hp-penerima").innerText = `No HP:${data.no_hp_penerima}`;
       document.getElementById("alamat-penerima").innerText = `Alamat:${data.alamat_penerima}`;
+
+      document.getElementById("hero-img").src = data.hero_img;
       
     } else {
       document.body.innerHTML = "<h2>Undangan tidak ditemukan</h2>";
