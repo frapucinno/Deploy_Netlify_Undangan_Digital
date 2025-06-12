@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Riski & Ridwan</title>
+  <link rel="stylesheet" href="style_ulang.css">
+  <!-- Lightbox2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet" />
+  <!-- Fancybox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+</head>
+
+<body>
+  <!--INTRO-->
+  <div id="cover" class="intro">
+    <div class="intro-content">
+      <p class="subtitle">The Wedding Of</p>
+      <h1 id="nama-mempelai-intro" class="names"></h1>
+      <p class="dear">
+        Kepada Yth.<br>
+        Bapak/ Ibu/ Saudara/ i
+      </p>
+      <p class="tamu">Nama Tamu</p>
+      <button id="openInvitation" class="openInvitation">Buka Undangan</button>
+    </div>
+  </div>
+
+  <!--mulai isi undangan-->
+  <!--halaman 1 pembuka-->
+  <div id="mainContent" class="main-content" style="display:none;">
+    <div class="layout">
+      <!--kiri-->
+      <div class="hero-left"></div> <!-- GANTI JADI IMG PADA HTML SAJA -->
+      
+      <!--kanan-->
+      <div class="hero-right">
+        <!-- halaman 1 pembuka -->
+        <section class="hero-kanan">
+          <p class="keterangan1">The Wedding of</p>
+          <h1 id="nama-mempelai-judul" class="judul">hmmm</h1>
+          <p id="tanggal-resepsi" class="tanggal">hmmm</p> <!-- GANTI TYPE TIMESTAMP -->
+
+          <div class="scroll-hint">
+              <p class="scroll">Scroll ke bawah untuk melihat detail acara</p>
+              <div class="panah">⬇</div>
+          </div>
+        </section>
+
+        <section class="spasi-scroll"></section>
+        
+        <!--halaman 2 doa-->
+        <div class="pengantar">
+          <section class="foto-love">
+            <div class="zoom-in"> <!-- GANTI JADI IMG DI INPUT -->
+                <img src="preweed.jpg" alt="Foto Prewedding" style="width: 100%; border-radius: 12px;" />
+            </div>
+          </section>
+          
+          <section class="doa">
+            <div class="fade-up">
+                <h2>WITH LOVE</h2>
+                <h3 class="ar-rum">“Dan diantara tanda-tanda kekuasaanNya ialah Dia menciptakan 
+                untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung 
+                dan merasa tenteram kepadanya, dan dijadikanNya diantaramu rasa kasih dan sayang. 
+                Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir.”
+                <br>(Qs. Ar. Rum (30) : 21)</h3>
+            </div>
+          </section>
+        </div>
+        
+        <!--halaman 3 bride dan groom-->
+        <section class="bride_n_groom">
+          <div class="brngr">
+            <h2>BRIDE & GROOM</h2>
+          </div>
+          <div class="opening1">
+              <p>Assalamualaikum Wr. Wb.<br>
+                  Dengan memohon Rahmat & Ridho Allah SWT,<br>
+                  kami bermaksud mengundang Bapak/Ibu/Saudara/i<br>
+                  untuk menghadiri acara<br>
+                  pernikahan putra-putri kami:</p>
+          </div>
+          <div class="bride"> <!-- GANTI JADI IMG INPUT -->
+              <img src="bride.jpeg" alt="Foto bride" style="width: 200px; border-radius: 100px; margin: 0 auto;" />
+              <h1 class="panggilan1" id="nama-panggilan-wanita">hmmm</h1>
+              <h2 class="nama_lengkap1" id="nama-lengkap-wanita">hmmmm hmmm</h2>
+              <span id="nama-ayah-wanita-ke">HMMM</span><br>
+              <span id="nama-ibu-wanita">hmmmmmmm</span>
+              <h1 class="dan">&</h1><!-- GANTI JADI IMG INPUT -->
+              <img src="groom.jpeg" alt="Foto bride" style="width: 200px; border-radius: 100px; margin: 0 auto;" />
+              <h1 class="panggilan1" id="nama-panggilan-pria">hmmm</h1>
+              <h2 class="nama_lengkap1" id="nama-lengkap-pria">hmmm hmmm</h2>
+              <span id="nama-ayah-pria-ke">HMMM</span><br>
+              <span id="nama-ibu-pria">hmmmmmm</span>
+          </div>
+        </section>
+
+        <!--halaman 4 counter-->
+        <div id="countdown-container">
+            <h3>SAVE THE DATE</h3>
+            <div id="countdown">
+                <span id="days">00</span> Hari
+                <span id="hours">00</span> Jam
+                <span id="minutes">00</span> Menit
+                <span id="seconds">00</span> Detik
+            </div>
+        </div>
+
+        <!--halaman 5 info acara-->
+        <section class="box-acara">
+          <div class="akad">
+              <h2>AKAD NIKAH</h2>
+              <p>JUM’AT</p>
+              <h1>24</h1>
+              <p>JANUARI 2025</p>
+              <p>Pukul: 14.00 WIB</p>
+              <p id="lokasi-akad">dimana???</p>
+              <a id="link-lokasi-akad" href="#" class="btn-lokasi" target="_blank">📌 LIHAT LOKASI AKAD</a>
+          </div>
+        </section>
+
+        <section class="box-acara">
+          <div class="resepsi">
+              <h2>RESEPSI</h2>
+              <p>MINGGU</p>
+              <h1>26</h1>
+              <p>JANUARI 2025</p>
+              <p>Pukul: 11.00 WIB - Selesai</p>
+              <p id="lokasi-resepsi">dimana???</p>
+              <a id="link-lokasi-resepsi" href="#" class="btn-lokasi" target="_blank">📌 LIHAT LOKASI RESEPSI</a>
+          </div>
+        </section>
+        
+        <!--halaman 6 RENCANA love story BUAT DISINI-->
+        <section class="kutipan">
+          <div class="fade-left">
+            <h3>“Cinta sejati tumbuh ketika dua jiwa saling mendukung.”</h3>
+          </div>
+        </section>
+        
+        <!-- halaman 7 galeri-->
+        <section class="galeri">
+          <div class="fade-right">
+            <img src="preweed.jpg" alt="Foto Prewedding" style="width: 100%; border-radius: 12px;" />
+          </div>
+        </section>
+        
+        <h2>OUR GALLERY</h2>
+        <section class="galeri-statis">
+          <div class="galeri-zoom">
+            <a data-fancybox="galeriku" href="foto1.jpg" data-caption="Foto 1" class="item landscape">
+              <img src="foto1.jpg" alt="Foto 1" />
+            </a>
+            <a data-fancybox="galeriku" href="foto2.jpg" data-caption="Foto 2" class="item landscape">
+              <img src="foto2.jpg" alt="Foto 2" />
+            </a>
+            <a data-fancybox="galeriku" href="foto3.jpg" data-caption="Foto 3" class="item portrait">
+              <img src="foto3.jpg" alt="Foto 3"  />
+            </a>
+            <a data-fancybox="galeriku" href="foto4.jpg" data-caption="Foto " class="item portrait">
+              <img src="foto4.jpg" alt="Foto 3" />
+            </a>
+          </div>
+        </section>
+        
+        <!--halaman 8 gift-->
+        <div class="gift-section">
+          <h2>WEDDING GIFT</h2>
+          <p class="gift-text">Doa restu Anda merupakan karunia yang sangat berarti bagi kami...</p>
+          <button class="gift-toggle">➝ KLIK DISINI</button>
+
+          <div class="gift-content-wrapper" style="height: 0;">
+            <div class="gift-content">
+              <!-- Konten rekening dan alamat -->
+              <div class="bank-card">
+                <span id="nama-bank1">nama bank 1</span><br>
+                <span id="no-rek1">xxxxxxxxxx</span><br>
+                <span id="an-bank1">AN SIAPA???</span>
+                <button class= "copy-btn" onclick="copyToClipboard('no-rek1')">Copy</button>
+              </div>
+
+              <div class="bank-card">
+                <span id="nama-bank2">nama bank 2</span><br>
+                <span id="no-rek2">xxxxxxxxxx</span><br>
+                <span id="an-bank2">AN SIAPA???</span>
+                <button class= "copy-btn" onclick="copyToClipboard('no-rek2')">Copy</button>
+              </div>
+
+              <div class="gift-info">
+                <h3>🎁 Kirim Hadiah</h3>
+                <span id="nama-penerima-hadiah">siapa namanya</span><br>
+                <span id="no-hp-penerima">berapa nomornya</span><br>
+                <span id="alamat-penerima">Alamat: Jl. Walisongo No. 33 ...</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- halaman 9 RSVP-->
+        <div class="container">
+            <h2>WISHES</h2>
+            <p>Berikan ucapan harapan dan do’a kepada kedua mempelai</p>
+            <div class="counter">
+                <div class="hadir-box">
+                    <p class="count-hadir" id="count-hadir">0</p>
+                    <span>Hadir</span>
+                </div>
+                <div class="tidak-hadir-box">
+                    <p class="count-tidak" id="count-tidak">0</p>
+                    <span>Tidak Hadir</span>
+                </div>
+            </div>
+            <form id="rsvpForm">
+                <input type="text" id="nama" placeholder="Nama" required>
+                <textarea id="ucapan" placeholder="Ucapan" required></textarea>
+                <select id="statusHadir" required>
+                    <option value="" disabled selected>Hadir</option>
+                    <option value="Hadir">Hadir</option>
+                    <option value="Tidak Hadir">Tidak Hadir</option>
+                </select>
+                <button class="submit" type="submit">Kirim</button>
+            </form>
+            <div class="comments" id="comments"></div>
+        </div>
+
+        <!--PENUTUP BUAT DISINI-->
+        <div class="penutup">
+          <section class="foto-akhir">
+            <div class="last-pic">
+                <img src="foto4.jpg" alt="Foto Prewedding" />
+            </div>
+          </section>
+          
+          <section class="kutipan-penutup">
+            <div class="sekian">
+                <h3 class="kata-penutup">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Anda berkenan hadir dan memberikan doa restunya untuk pernikahan kami.
+                  <br>Atas doa & restunya, kami ucapkan terima kasih.</h3>
+                <h2 class="pelai">RISKI & RIDWAN</h2>
+            </div>
+          </section>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js" type="module"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js" type="module"></script>
+  <!-- JS lokal -->
+  <script type="module" src="script_path.js"></script>
+  
+  <!-- Lightbox2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
+  <!-- Fancybox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <script>
+    const toggleBtn = document.querySelector('.gift-toggle');
+    const wrapper = document.querySelector('.gift-content-wrapper');
+    const content = document.querySelector('.gift-content');
+
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = wrapper.classList.contains('show');
+      
+      if (!isOpen) {
+        const fullHeight = content.scrollHeight;
+        wrapper.style.height = fullHeight + 'px';
+        wrapper.classList.add('show');
+      } else {
+        wrapper.style.height = wrapper.scrollHeight + 'px'; // force reflow
+        requestAnimationFrame(() => {
+          wrapper.style.height = '0px';
+          wrapper.classList.remove('show');
+        });
+      }
+    });
+
+    wrapper.addEventListener('transitionend', (e) => {
+      if (wrapper.classList.contains('show')) {
+        wrapper.style.height = 'auto'; // allow dynamic resizing
+      }
+    });
+
+    function copyToClipboard(idTarget) {
+      const textToCopy = document.getElementById(idTarget).innerText;
+      navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          alert("Nomor rekening berhasil disalin!");
+        })
+        .catch(err => {
+          console.error("Gagal menyalin: ", err);
+        });
+      }
+  </script>
+
+</body>
+</html>
