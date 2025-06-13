@@ -97,6 +97,32 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("alamat-penerima").innerText = `Alamat:${data.alamat_penerima}`;
 
       document.getElementById("hero-img").src = data.hero_img;
+
+       // COUNTDOWN TANGGAL
+      const weddingDate = data.tanggal_resepsi.toDate().getTime();
+
+      const updateCountdown = () => {
+          const now = new Date().getTime();
+          const distance = weddingDate - now;
+
+          if (distance < 0) {
+              document.getElementById("countdown").innerHTML = "Selamat Menempuh Hidup Baru!";
+              return;
+          }
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          document.getElementById("days").innerText = String(days).padStart(2, '0');
+          document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+          document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+          document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+      };
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
       
     } else {
       document.body.innerHTML = "<h2>Undangan tidak ditemukan</h2>";
@@ -106,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.innerHTML = "<h2>Gagal mengambil data dari Firestore</h2>";
   });
 });
+
 
 
 // INTRO
@@ -179,31 +206,7 @@ gsap.from(".fade-right", {
   ease: "power2.out"
 });
 
-  // COUNTDOWN TANGGAL
-const weddingDate = data.tanggal_akad.toDate().getTime();
-
-const updateCountdown = () => {
-    const now = new Date().getTime();
-    const distance = weddingDate - now;
-
-    if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "Selamat Menempuh Hidup Baru!";
-        return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("days").innerText = String(days).padStart(2, '0');
-    document.getElementById("hours").innerText = String(hours).padStart(2, '0');
-    document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
-    document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
-};
-
-setInterval(updateCountdown, 1000);
-updateCountdown();
+ 
 
   
 const sliderContainer = document.querySelector(".slider-container");
