@@ -30,6 +30,37 @@ document.addEventListener("DOMContentLoaded", () => {
   getDoc(docRef).then((docSnap) => {
     if (docSnap.exists()) {
       const data = docSnap.data();
+
+      //tanggal resepsi
+      const tgl_resepsi = data.tanggal_resepsi.toDate();
+      const formatted_resepsi = tgl_resepsi.toLocaleDateString("id-ID", {
+        day: "numeric", month: "long", year: "numeric"
+      });
+      const hariTanggal_resepsi = tgl_resepsi.getDate(); // hanya tanggal
+      const namaHari_resepsi = tgl_resepsi.toLocaleDateString("id-ID", { weekday: "long" });
+      const bulanTahun_resepsi = tgl_resepsi.toLocaleDateString("id-ID", {
+        month: "long",
+        year: "numeric"
+      });
+
+      //tanggal akad
+      const tgl_akad = data.tanggal_akad.toDate();
+      const hariTanggal_akad = tgl_akad.getDate(); // hanya tanggal
+      const namaHari_akad = tgl_akad.toLocaleDateString("id-ID", { weekday: "long" });
+      const bulanTahun_akad = tgl_akad.toLocaleDateString("id-ID", {
+        month: "long",
+        year: "numeric"
+      });
+
+      document.getElementById("tanggal-resepsi-lengkap").innerText = formatted_resepsi;
+      document.getElementById("bulan-tahun-resepsi").innerText = bulanTahun_resepsi;
+      document.getElementById("hari-resepsi").innerText = namaHari_resepsi;
+      document.getElementById("tanggal-resepsi").innerText = hariTanggal_resepsi;
+      
+      document.getElementById("bulan-tahun-akad").innerText = bulanTahun_akad;
+      document.getElementById("hari-akad").innerText = namaHari_akad;
+      document.getElementById("tanggal-akad").innerText = hariTanggal_akad;
+      
       //isian dari form (koleksi firestore)
       document.getElementById("nama-mempelai-intro").innerText = `${data.nama_wanita} & ${data.nama_pria}`;
       document.getElementById("nama-mempelai-judul").innerText = `${data.nama_wanita} & ${data.nama_pria}`;
@@ -148,8 +179,8 @@ gsap.from(".fade-right", {
   ease: "power2.out"
 });
 
-  // Ubah tanggal ini ke tanggal pernikahanmu (format: YYYY-MM-DDTHH:MM:SS)
-const weddingDate = new Date("2025-11-25T09:00:00").getTime();
+  // COUNTDOWN TANGGAL
+const weddingDate = data.tanggal_akad.toDate().getTime();
 
 const updateCountdown = () => {
     const now = new Date().getTime();
