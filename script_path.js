@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const formatted_resepsi = tgl_resepsi.toLocaleDateString("id-ID", {
         day: "numeric", month: "long", year: "numeric"
       });
-      const hariTanggal_resepsi = tgl_resepsi.toLocaleDateString("id-ID", { day: "numeric" });
+      const hariTanggal_resepsi = tgl_resepsi.getDate();
       const namaHari_resepsi = tgl_resepsi.toLocaleDateString("id-ID", { weekday: "long" });
       const bulanTahun_resepsi = tgl_resepsi.toLocaleDateString("id-ID", {
         month: "long",
