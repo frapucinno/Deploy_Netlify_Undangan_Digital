@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("tanggal-resepsi-lengkap").innerText = formatted_resepsi;
       document.getElementById("bulan-tahun-resepsi").innerText = bulanTahun_resepsi;
       document.getElementById("hari-resepsi").innerText = namaHari_resepsi;
-      document.getElementById("tanggal-resepsi").innerText = tgl_resepsi.getDate();
+      document.getElementById("tanggal-resepsi").innerText = tgl_resepsi.toLocaleDateString("id‑ID", { day: "numeric"});
       
       document.getElementById("bulan-tahun-akad").innerText = bulanTahun_akad;
       document.getElementById("hari-akad").innerText = namaHari_akad;
