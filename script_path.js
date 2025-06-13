@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const formatted_resepsi = tgl_resepsi.toLocaleDateString("id-ID", {
         day: "numeric", month: "long", year: "numeric"
       });
-      
+      const hariTanggal_resepsi = tgl_resepsi.toLocaleDateString("id‑ID", { day: "numeric" });
       const namaHari_resepsi = tgl_resepsi.toLocaleDateString("id-ID", { weekday: "long" });
       const bulanTahun_resepsi = tgl_resepsi.toLocaleDateString("id-ID", {
         month: "long",
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("tanggal-resepsi-lengkap").innerText = formatted_resepsi;
       document.getElementById("bulan-tahun-resepsi").innerText = bulanTahun_resepsi;
       document.getElementById("hari-resepsi").innerText = namaHari_resepsi;
-      document.getElementById("tanggal-resepsi").innerText = tgl_resepsi.toLocaleDateString("id‑ID", { day: "numeric"});
+      document.getElementById("tanggal-resepsi").innerText = hariTanggal_resepsi;
       
       document.getElementById("bulan-tahun-akad").innerText = bulanTahun_akad;
       document.getElementById("hari-akad").innerText = namaHari_akad;
