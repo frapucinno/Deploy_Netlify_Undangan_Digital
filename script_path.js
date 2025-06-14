@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("lokasi-akad").innerText = `📍${data.lokasi_akad}`;
       document.getElementById("link-lokasi-akad").href = data.link_lokasi_akad;
 
-      document.getElementById("tanggal-resepsi").innerText = data.tanggal_resepsi;
       document.getElementById("lokasi-resepsi").innerText = `📍${data.lokasi_resepsi}`;
       document.getElementById("link-lokasi-resepsi").href = data.link_lokasi_resepsi;
 
