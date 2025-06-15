@@ -99,6 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       document.getElementById("hero-img").src = data.hero_img;
       document.getElementById("foto-prewed").src = data.foto_prewed;
+      document.getElementById("foto-bride").src = data.foto_bride;
+      document.getElementById("foto-groom").src = data.foto_groom;
 
        // COUNTDOWN TANGGAL
       const weddingDate = data.tanggal_resepsi.toDate().getTime();
