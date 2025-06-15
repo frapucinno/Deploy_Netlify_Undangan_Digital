@@ -98,6 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("alamat-penerima").innerText = `Alamat:${data.alamat_penerima}`;
 
       document.getElementById("hero-img").src = data.hero_img;
+      document.getElementById("foto-prewed").src = data.foto_prewed;
 
        // COUNTDOWN TANGGAL
       const weddingDate = data.tanggal_resepsi.toDate().getTime();
