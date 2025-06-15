@@ -90,6 +90,12 @@ button:hover {
   display: none;
 }
 
+.hero-img {
+  width: 100%;
+  max-height: 100vh;
+  object-fit: cover;
+}
+
 /* konten kanan */
 .hero-kanan {
   height: 100vh;
