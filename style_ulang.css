@@ -330,9 +330,15 @@ h2 {
 }
 
 .gallery-img {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.gallery-img img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
   display: block;
   object-fit: cover;
 }
