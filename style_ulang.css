@@ -325,8 +325,8 @@ h2 {
 .gallery-pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 5px;
-  margin-bottom: 10px;
+  gap: 10px;
+  margin-bottom: 7px;
 }
 
 .gallery-container {
