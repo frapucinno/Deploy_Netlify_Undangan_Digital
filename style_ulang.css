@@ -326,7 +326,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 }
 
 .gallery-container {
@@ -338,7 +338,7 @@ h2 {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin-bottom: 5px;
+  margin-bottom: 7px;
   transition: transform 0.3s;
 }
 
