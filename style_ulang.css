@@ -318,8 +318,9 @@ h2 {
 }
 
 /*GALERI*/
-.galeri-container :hover {
+.gallery-img :hover {
   transform: scale(1.01);
+  transition: 0.3s;
 }
 
 .gallery-container {

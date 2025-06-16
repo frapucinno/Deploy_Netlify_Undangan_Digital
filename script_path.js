@@ -112,10 +112,16 @@ document.addEventListener("DOMContentLoaded", () => {
         images.forEach(url => {
           const img = new Image();
           img.src = url;
+
           img.onload = function () {
             const orientation = img.naturalWidth > img.naturalHeight ? "horizontal" : "vertical";
-            img.classList.add("gallery-img", orientation);
-            gallery.appendChild(img);
+
+            // Bungkus img ke dalam div.gallery-img
+            const wrapper = document.createElement("div");
+            wrapper.classList.add("gallery-img", orientation);
+
+            wrapper.appendChild(img);
+            gallery.appendChild(wrapper);
           };
         });
       }
