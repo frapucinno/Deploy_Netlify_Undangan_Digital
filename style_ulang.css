@@ -322,13 +322,6 @@ h2 {
   transform: scale(1.01);
 }
 
-#galeri-undangan {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5px;
-}
-
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -350,18 +343,6 @@ h2 {
 
 .gallery-img.vertical {
   aspect-ratio: 4 / 5;
-}
-
-.gallery-img:hover {
-  transform: scale(1.05);
-}
-
-.gallery-img.horizontal {
-  grid-column: span 2;
-}
-
-.gallery-img.vertical {
-  grid-row: span 2;
 }
 
 /*GIFT*/
