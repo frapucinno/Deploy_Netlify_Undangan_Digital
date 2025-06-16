@@ -318,51 +318,42 @@ h2 {
 }
 
 /*GALERI*/
-.galeri-zoom {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  padding: 16px 1.8rem;
-}
-
 .galeri-zoom :hover {
   transform: scale(1.01);
 }
 
-.item {
-  display: block;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-.item.landscape {
-  grid-column: span 2;
-}
-
-.item.potrait {
-  grid-column: span 1;
-}
-
-.img-galeri {
-  width: 100%;
-  max-width: 200px;
-  margin: 10px;
-  border-radius: 10px;
-  object-fit: cover;
-}
 #galeri-undangan {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+.gallery-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+.gallery-img.horizontal {
+  grid-column: span 2;
+}
+
+.gallery-img.vertical {
+  grid-row: span 2;
 }
 
 /*GIFT*/

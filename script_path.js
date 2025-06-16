@@ -103,13 +103,22 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("foto-groom").src = data.foto_groom;
 
       //GALERI FOTO
-      const galeriContainer = document.getElementById("foto-galeri");
-      data.foto_galeri.forEach((url) => {
-        const img = document.createElement("img");
-        img.src = url;
-        img.classList.add("img-galeri");
-        galeriContainer.appendChild(img);
-      });
+      function renderGallery(images) {
+        const gallery = document.getElementById("foto-galeri");
+        gallery.innerHTML = "";
+
+        images.forEach(url => {
+          const img = new Image();
+          img.src = url;
+          img.onload = function () {
+            const orientation = img.naturalWidth > img.naturalHeight ? "horizontal" : "vertical";
+            img.classList.add("gallery-img", orientation);
+            gallery.appendChild(img);
+          };
+        });
+      }
+
+      renderGallery(fotoGaleriArray)
     
        // COUNTDOWN TANGGAL
       const weddingDate = data.tanggal_resepsi.toDate().getTime();
