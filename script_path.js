@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      renderGallery(fotoGaleriArray)
+      renderGallery(foto_galeri)
     
        // COUNTDOWN TANGGAL
       const weddingDate = data.tanggal_resepsi.toDate().getTime();
