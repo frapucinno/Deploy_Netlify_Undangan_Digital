@@ -318,22 +318,22 @@ h2 {
 }
 
 /*GALERI*/
-.galeri-zoom :hover {
+.galeri-container :hover {
   transform: scale(1.01);
 }
 
 .gallery-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-  padding: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 16px 1.8rem;
 }
 
 .gallery-img {
   width: 100%;
-  max-width: 300px;
-  margin: 8px;
+  height: auto;
   border-radius: 8px;
+  display: block;
   object-fit: cover;
 }
 
@@ -342,7 +342,7 @@ h2 {
 }
 
 .gallery-img.vertical {
-  grid-row: span 2;
+  grid-column: span 1;
 }
 
 /*GIFT*/
