@@ -351,6 +351,20 @@ h2 {
   grid-column: span 1;
 }
 
+.img-galeri {
+  width: 100%;
+  max-width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+#galeri-undangan {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
 /*GIFT*/
 .gift-section {
   background: #ffffff;

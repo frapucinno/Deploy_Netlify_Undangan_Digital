@@ -102,6 +102,15 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("foto-bride").src = data.foto_bride;
       document.getElementById("foto-groom").src = data.foto_groom;
 
+      //GALERI FOTO
+      const galeriContainer = document.getElementById("foto-galeri");
+      data.foto_galeri.forEach((url) => {
+        const img = document.createElement("img");
+        img.src = url;
+        img.classList.add("img-galeri");
+        galeriContainer.appendChild(img);
+      });
+    
        // COUNTDOWN TANGGAL
       const weddingDate = data.tanggal_resepsi.toDate().getTime();
 
