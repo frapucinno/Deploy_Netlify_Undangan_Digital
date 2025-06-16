@@ -54,6 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
         year: "numeric"
       });
 
+      const foto_galeri = data.foto_galeri || [];
+
       document.getElementById("tanggal-resepsi-lengkap").innerText = formatted_resepsi;
       document.getElementById("bulan-tahun-resepsi").innerText = bulanTahun_resepsi;
       document.getElementById("hari-resepsi").innerText = namaHari_resepsi;
@@ -118,8 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      renderGallery(foto_galeri)
-    
+      renderGallery(foto_galeri);
+        
        // COUNTDOWN TANGGAL
       const weddingDate = data.tanggal_resepsi.toDate().getTime();
 
