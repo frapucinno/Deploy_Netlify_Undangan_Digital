@@ -152,6 +152,10 @@ document.addEventListener("DOMContentLoaded", () => {
                   wrapper.className = "gallery-pair";
 
                   item.forEach(url => {
+                    const link = document.createElement("a");
+                    link.href = url;
+                    link.setAttribute("data-lightbox", "galeri");
+
                     const img = new Image();
                     img.src = url;
                     img.className = "gallery-img vertical";
@@ -160,10 +164,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
                   gallery.appendChild(wrapper);
                 } else {
+                  const link = document.createElement("a");
+                  link.href = url;
+                  link.setAttribute("data-lightbox", "galeri");
+
                   const img = new Image();
                   img.src = item;
                   img.className = "gallery-img horizontal";
-                  gallery.appendChild(img);
+
+                  link.appendChild(img);
+                  gallery.appendChild(link);
                 }
               });
             }
