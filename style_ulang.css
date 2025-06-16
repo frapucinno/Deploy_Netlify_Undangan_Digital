@@ -323,6 +323,12 @@ h2 {
   transition: 0.3s;
 }
 
+.gallery-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 .gallery-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

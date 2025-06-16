@@ -109,6 +109,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const gallery = document.getElementById("foto-galeri");
         gallery.innerHTML = "";
 
+        const horizontal = [];
+        const vertical = [];
+
+        let loadedCount = 0;
+
         images.forEach(url => {
           const img = new Image();
           img.src = url;
@@ -116,15 +121,58 @@ document.addEventListener("DOMContentLoaded", () => {
           img.onload = function () {
             const orientation = img.naturalWidth > img.naturalHeight ? "horizontal" : "vertical";
 
-            // Bungkus img ke dalam div.gallery-img
-            const wrapper = document.createElement("div");
-            wrapper.classList.add("gallery-img", orientation);
+            if (orientation === "horizontal") {
+              horizontal.push(url);
+            } else {
+              vertical.push(url);
+            }
 
-            wrapper.appendChild(img);
-            gallery.appendChild(wrapper);
+            loadedCount++;
+            // Jika semua sudah diload, baru mulai render
+            if (loadedCount === images.length) {
+              const orderedImages = [];
+
+              // Masukkan gambar horizontal ke orderedImages
+              orderedImages.push(...horizontal);
+
+              // Pasangkan vertical 2-2
+              for (let i = 0; i < vertical.length; i += 2) {
+                if (i + 1 < vertical.length) {
+                  orderedImages.push([vertical[i], vertical[i + 1]]); // pasangan vertical
+                } else {
+                  orderedImages.push(vertical[i]); // satuan (tidak berpasangan)
+                }
+              }
+
+              // Render orderedImages
+              orderedImages.forEach(item => {
+                if (Array.isArray(item)) {
+                  // pasangan vertical
+                  const wrapper = document.createElement("div");
+                  wrapper.className = "gallery-pair";
+
+                  item.forEach(url => {
+                    const img = new Image();
+                    img.src = url;
+                    img.className = "gallery-img vertical";
+                    wrapper.appendChild(img);
+                  });
+
+                  gallery.appendChild(wrapper);
+                } else {
+                  const img = new Image();
+                  img.src = item;
+                  img.className = "gallery-img horizontal";
+                  gallery.appendChild(img);
+                }
+              });
+            }
           };
         });
       }
+
+
+  
 
       renderGallery(foto_galeri);
         
