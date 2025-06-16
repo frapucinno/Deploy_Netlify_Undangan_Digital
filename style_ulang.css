@@ -338,10 +338,18 @@ h2 {
 
 .gallery-img {
   width: 100%;
-  height: auto;
+  max-width: 300px;
+  margin: 8px;
+  border-radius: 8px;
   object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
+}
+
+.gallery-img.horizontal {
+  aspect-ratio: 16 / 10;
+}
+
+.gallery-img.vertical {
+  aspect-ratio: 4 / 5;
 }
 
 .gallery-img:hover {
