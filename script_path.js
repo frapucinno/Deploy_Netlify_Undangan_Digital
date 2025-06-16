@@ -120,21 +120,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
           img.onload = function () {
             const orientation = img.naturalWidth > img.naturalHeight ? "horizontal" : "vertical";
-
-            if (orientation === "horizontal") {
-              horizontal.push(url);
-            } else {
-              vertical.push(url);
-            }
+            (orientation === "horizontal" ? horizontal : vertical).push(url);
 
             loadedCount++;
             // Jika semua sudah diload, baru mulai render
             if (loadedCount === images.length) {
-              const orderedImages = [];
-
-              // Masukkan gambar horizontal ke orderedImages
-              orderedImages.push(...horizontal);
-
+              const orderedImages = [...horizontal];
+              
               // Pasangkan vertical 2-2
               for (let i = 0; i < vertical.length; i += 2) {
                 if (i + 1 < vertical.length) {
@@ -148,32 +140,33 @@ document.addEventListener("DOMContentLoaded", () => {
               orderedImages.forEach(item => {
                 if (Array.isArray(item)) {
                   // pasangan vertical
-                  const wrapper = document.createElement("div");
-                  wrapper.className = "gallery-pair";
-
-                  item.forEach(url => {
-                    const link = document.createElement("a");
-                    link.href = url;
-                    link.setAttribute("data-lightbox", "galeri");
+                  const pair = document.createElement("div");
+                  pair.className = "gallery-pair";
+                  
+                  item.forEach(url => {                   
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.setAttribute("data-lightbox", "galeri");
 
                     const img = new Image();
                     img.src = url;
                     img.className = "gallery-img vertical";
-                    wrapper.appendChild(img);
+                    a.appendChild(img);
+                    pair.appendChild(a);
                   });
 
-                  gallery.appendChild(wrapper);
+                  gallery.appendChild(pair);
                 } else {
-                  const link = document.createElement("a");
-                  link.href = url;
-                  link.setAttribute("data-lightbox", "galeri");
+                  const a = document.createElement("a");
+                  a.href = url;
+                  a.setAttribute("data-lightbox", "galeri");
 
                   const img = new Image();
                   img.src = item;
                   img.className = "gallery-img horizontal";
 
-                  link.appendChild(img);
-                  gallery.appendChild(link);
+                  a.appendChild(img);
+                  gallery.appendChild(a);
                 }
               });
             }
