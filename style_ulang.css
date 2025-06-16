@@ -327,35 +327,26 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+  margin-bottom: 10px;
 }
 
 .gallery-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  display: block;
   padding: 16px 1.8rem;
 }
 
 .gallery-img {
-  display: block;
+  width: 100%;
   border-radius: 12px;
-  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 10px;
+  transition: transform 0.3s;
 }
 
-.gallery-img img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
 
 .gallery-img.horizontal {
-  grid-column: span 2;
-}
-
-.gallery-img.vertical {
-  grid-column: span 1;
+  width: 100%;
+  display: block;
 }
 
 /*GIFT*/
