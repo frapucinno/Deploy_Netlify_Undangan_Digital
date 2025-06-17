@@ -5,11 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Undangan Riski & Ridwan</title>
   <link rel="stylesheet" href="style_ulang.css">
-  <!-- Lightbox2 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet">
-  <!-- Fancybox CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
-</head>
+  <!--fancy fancy-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+  </head>
 
 <body>
   <!--INTRO-->
@@ -245,12 +243,19 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js" type="module"></script>
   <!-- JS lokal -->
   <script type="module" src="script_path.js"></script>
-  
-  <!-- Sebelum </body> -->
-  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
-
-  <!-- Fancybox JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  <!--FANCY FANCY-->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <script>
+    Fancybox.bind('[data-fancybox="galeri"]', {
+      Thumbs: false,
+      Toolbar: {
+        display: [
+          { id: "counter", position: "center" },
+          "close",
+        ],
+      },
+    });
+  </script>
   <script>
     const toggleBtn = document.querySelector('.gift-toggle');
     const wrapper = document.querySelector('.gift-content-wrapper');
