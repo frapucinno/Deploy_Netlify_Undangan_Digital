@@ -149,9 +149,6 @@
         <h2>OUR GALLERY</h2>
         <section class="galeri-statis">
           <div class="gallery-container" id="foto-galeri"></div>
-          <a href="https://via.placeholder.com/800" data-lightbox="galeri">
-            <img src="https://via.placeholder.com/200" />
-          </a>
         </section>
         
         <!--halaman 8 gift-->
@@ -243,19 +240,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js" type="module"></script>
   <!-- JS lokal -->
   <script type="module" src="script_path.js"></script>
-  <!--FANCY FANCY-->
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-  <script>
-    Fancybox.bind('[data-fancybox="galeri"]', {
-      Thumbs: false,
-      Toolbar: {
-        display: [
-          { id: "counter", position: "center" },
-          "close",
-        ],
-      },
-    });
-  </script>
+
   <script>
     const toggleBtn = document.querySelector('.gift-toggle');
     const wrapper = document.querySelector('.gift-content-wrapper');

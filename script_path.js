@@ -2,6 +2,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { Fancybox } from "https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.esm.js";
 
 // ✅ Konfigurasi Firebase (GANTI dengan punyamu!)
 const firebaseConfig = {
@@ -19,7 +20,7 @@ const db = getFirestore(app);
 
 // Jalankan setelah halaman dimuat
 document.addEventListener("DOMContentLoaded", () => {
-   const path = window.location.pathname;
+  const path = window.location.pathname;
   const undanganId = path.replace(/^\/+/, ""); // hapus / di awal
   if (!undanganId) {
     document.body.innerHTML = "<h2>URL tidak memiliki parameter ?id=...</h2>";
@@ -168,6 +169,16 @@ document.addEventListener("DOMContentLoaded", () => {
                   a.appendChild(img);
                   gallery.appendChild(a);
                 }
+              });
+
+              Fancybox.bind('[data-fancybox="galeri"]', {
+                Thumbs: false,
+                Toolbar: {
+                  display: [
+                    { id: "counter", position: "center" },
+                    "close",
+                  ],
+                },
               });
             }
           };
