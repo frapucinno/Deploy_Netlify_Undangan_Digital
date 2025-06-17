@@ -176,15 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
               console.log("Binding Fancybox pada elemen:", document.querySelectorAll('[data-fancybox="galeri"]'));
 
-              Fancybox.bind('[data-fancybox="galeri"]', {
-                Thumbs: false,
-                Toolbar: {
-                  display: [
-                    { id: "counter", position: "center" },
-                    "close",
-                  ],
-                },
-              });
+              Fancybox.bind('[data-fancybox="galeri"]');
             }
           };
         });
