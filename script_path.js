@@ -110,6 +110,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const gallery = document.getElementById("foto-galeri");
         gallery.innerHTML = "";
 
+        if (!Array.isArray(images) || images.length === 0) return;
+        images = images.filter(url => typeof url === "string" && url.startsWith("http"));
+
         const horizontal = [];
         const vertical = [];
 
@@ -171,6 +174,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
               });
 
+              console.log("Binding Fancybox pada elemen:", document.querySelectorAll('[data-fancybox="galeri"]'));
+
               Fancybox.bind('[data-fancybox="galeri"]', {
                 Thumbs: false,
                 Toolbar: {
@@ -185,10 +190,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
+      if (Array.isArray(foto_galeri) && foto_galeri.length > 0) {
+        renderGallery(foto_galeri);
+      }
 
-  
-
-      renderGallery(foto_galeri);
         
        // COUNTDOWN TANGGAL
       const weddingDate = data.tanggal_resepsi.toDate().getTime();
