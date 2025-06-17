@@ -19,53 +19,7 @@ const db = getFirestore(app);
 
 // Jalankan setelah halaman dimuat
 document.addEventListener("DOMContentLoaded", () => {
-  const sliderContainer = document.querySelector(".slider-container");
-  const prevBtn = document.querySelector(".prev-btn");
-  const nextBtn = document.querySelector(".next-btn");
-
-  prevBtn.addEventListener("click", () => {
-    sliderContainer.scrollBy({ left: -320, behavior: "smooth" });
-  });
-
-  nextBtn.addEventListener("click", () => {
-    sliderContainer.scrollBy({ left: 320, behavior: "smooth" });
-  });
-
-  let countHadir = 0;
-  let countTidak = 0;
-
-  document.getElementById("rsvpForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const nama = document.getElementById("nama").value.trim();
-      const ucapan = document.getElementById("ucapan").value.trim();
-      const status = document.getElementById("statusHadir").value;
-
-      if (!nama || !ucapan || !status) return;
-
-      const commentsDiv = document.getElementById("comments");
-
-      const newComment = document.createElement("div");
-      newComment.classList.add("comment-item");
-      newComment.innerHTML = `<strong>${nama}</strong>: ${ucapan}`;
-
-      commentsDiv.prepend(newComment); // Tambahkan ke atas
-
-      // Update counter
-      if (status === "Hadir") {
-          countHadir++;
-          document.getElementById("count-hadir").textContent = countHadir;
-      } else {
-          countTidak++;
-          document.getElementById("count-tidak").textContent = countTidak;
-      }
-
-      // Reset form
-      document.getElementById("rsvpForm").reset();
-  });
-
-
-  const path = window.location.pathname;
+   const path = window.location.pathname;
   const undanganId = path.replace(/^\/+/, ""); // hapus / di awal
   if (!undanganId) {
     document.body.innerHTML = "<h2>URL tidak memiliki parameter ?id=...</h2>";
@@ -333,5 +287,48 @@ gsap.from(".fade-right", {
   ease: "power2.out"
 });
 
- 
+ const sliderContainer = document.querySelector(".slider-container");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+
+  prevBtn.addEventListener("click", () => {
+    sliderContainer.scrollBy({ left: -320, behavior: "smooth" });
+  });
+
+  nextBtn.addEventListener("click", () => {
+    sliderContainer.scrollBy({ left: 320, behavior: "smooth" });
+  });
+
+  let countHadir = 0;
+  let countTidak = 0;
+
+  document.getElementById("rsvpForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nama = document.getElementById("nama").value.trim();
+      const ucapan = document.getElementById("ucapan").value.trim();
+      const status = document.getElementById("statusHadir").value;
+
+      if (!nama || !ucapan || !status) return;
+
+      const commentsDiv = document.getElementById("comments");
+
+      const newComment = document.createElement("div");
+      newComment.classList.add("comment-item");
+      newComment.innerHTML = `<strong>${nama}</strong>: ${ucapan}`;
+
+      commentsDiv.prepend(newComment); // Tambahkan ke atas
+
+      // Update counter
+      if (status === "Hadir") {
+          countHadir++;
+          document.getElementById("count-hadir").textContent = countHadir;
+      } else {
+          countTidak++;
+          document.getElementById("count-tidak").textContent = countTidak;
+      }
+
+      // Reset form
+      document.getElementById("rsvpForm").reset();
+  }); 
 
