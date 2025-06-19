@@ -185,7 +185,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (Array.isArray(foto_galeri) && foto_galeri.length > 0) {
         renderGallery(foto_galeri);
       }
-
         
        // COUNTDOWN TANGGAL
       const weddingDate = data.tanggal_resepsi.toDate().getTime();
@@ -338,5 +337,29 @@ gsap.from(".fade-right", {
 
       // Reset form
       document.getElementById("rsvpForm").reset();
-  }); 
+  });
+  
+  // Ambil data lagu_url dari Firestore (setelah getDoc sukses)
+const laguUrl = data.lagu_url; // pastikan field ini ada di Firestore
+
+const bgMusic = document.getElementById("bg-music");
+const toggleBtn = document.getElementById("music-toggle");
+
+if (laguUrl) {
+  bgMusic.src = laguUrl;
+
+  // Tombol toggle play/pause
+  toggleBtn.addEventListener("click", () => {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      toggleBtn.innerText = "⏸";
+    } else {
+      bgMusic.pause();
+      toggleBtn.innerText = "▶️";
+    }
+  });
+} else {
+  document.getElementById("music-controls").style.display = "none";
+}
+
 
