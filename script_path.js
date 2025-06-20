@@ -105,6 +105,16 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("foto-bride").src = data.foto_bride;
       document.getElementById("foto-groom").src = data.foto_groom;
 
+      // INTRO
+      document.getElementById('openInvitation').addEventListener('click', function() {
+        document.getElementById('cover').style.display = 'none';
+        document.getElementById('mainContent').style.display = 'block';
+        const bgMusic = document.getElementById("bg-music");
+        bgMusic.play().catch(() => {
+          console.warn("Autoplay diblokir, silakan tekan tombol play");
+        });
+      });
+
       //LAGU BERDENDANG
         // Ambil data lagu_url dari Firestore (setelah getDoc sukses)
       const laguUrl = data.lagu_url; // pastikan field ini ada di Firestore
@@ -248,15 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// INTRO
-document.getElementById('openInvitation').addEventListener('click', function() {
-  document.getElementById('cover').style.display = 'none';
-  document.getElementById('mainContent').style.display = 'block';
-  const bgMusic = document.getElementById("bg-music");
-  bgMusic.play().catch(() => {
-    console.warn("Autoplay diblokir, silakan tekan tombol play");
-  });
-});
+
 
 // Animasi: buat teks muncul perlahan dari bawah
 gsap.registerPlugin(ScrollTrigger);
