@@ -252,8 +252,9 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById('openInvitation').addEventListener('click', function() {
   document.getElementById('cover').style.display = 'none';
   document.getElementById('mainContent').style.display = 'block';
+  const bgMusic = document.getElementById("bg-music");
   bgMusic.play().catch(() => {
-    console.warn("Autoplay gagal, menunggu interaksi user.");
+    console.warn("Autoplay diblokir, silakan tekan tombol play");
   });
 });
 
