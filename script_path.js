@@ -105,6 +105,30 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("foto-bride").src = data.foto_bride;
       document.getElementById("foto-groom").src = data.foto_groom;
 
+      //LAGU BERDENDANG
+        // Ambil data lagu_url dari Firestore (setelah getDoc sukses)
+      const laguUrl = data.lagu_url; // pastikan field ini ada di Firestore
+
+      const bgMusic = document.getElementById("bg-music");
+      const toggleBtn = document.getElementById("music-toggle");
+
+      if (laguUrl) {
+        bgMusic.src = laguUrl;
+
+        // Tombol toggle play/pause
+        toggleBtn.addEventListener("click", () => {
+          if (bgMusic.paused) {
+            bgMusic.play();
+            toggleBtn.innerText = "⏸";
+          } else {
+            bgMusic.pause();
+            toggleBtn.innerText = "▶️";
+          }
+        });
+      } else {
+        document.getElementById("music-controls").style.display = "none";
+      }
+
       //GALERI FOTO
       function renderGallery(images) {
         const gallery = document.getElementById("foto-galeri");
@@ -220,6 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.innerHTML = "<h2>Gagal mengambil data dari Firestore</h2>";
   });
 });
+
 
 
 
@@ -342,27 +367,6 @@ gsap.from(".fade-right", {
       document.getElementById("rsvpForm").reset();
   });
   
-  // Ambil data lagu_url dari Firestore (setelah getDoc sukses)
-const laguUrl = data.lagu_url; // pastikan field ini ada di Firestore
 
-const bgMusic = document.getElementById("bg-music");
-const toggleBtn = document.getElementById("music-toggle");
-
-if (laguUrl) {
-  bgMusic.src = laguUrl;
-
-  // Tombol toggle play/pause
-  toggleBtn.addEventListener("click", () => {
-    if (bgMusic.paused) {
-      bgMusic.play();
-      toggleBtn.innerText = "⏸";
-    } else {
-      bgMusic.pause();
-      toggleBtn.innerText = "▶️";
-    }
-  });
-} else {
-  document.getElementById("music-controls").style.display = "none";
-}
 
 
