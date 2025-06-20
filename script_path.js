@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
             toggleBtn.innerText = "⏸";
           } else {
             bgMusic.pause();
-            toggleBtn.innerText = "▶️";
+            toggleBtn.innerText = "▶";
           }
         });
       } else {
