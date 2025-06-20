@@ -227,6 +227,9 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById('openInvitation').addEventListener('click', function() {
   document.getElementById('cover').style.display = 'none';
   document.getElementById('mainContent').style.display = 'block';
+  bgMusic.play().catch(() => {
+    console.warn("Autoplay gagal, menunggu interaksi user.");
+  });
 });
 
 // Animasi: buat teks muncul perlahan dari bawah
